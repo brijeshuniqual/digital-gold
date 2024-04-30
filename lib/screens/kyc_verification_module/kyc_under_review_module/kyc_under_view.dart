@@ -15,8 +15,11 @@ class KYCUnderView extends StatelessWidget {
       init: KYCUnderController(),
       dispose: (_) => Get.delete<KYCUnderController>(),
       builder: (_) {
-        return Scaffold(
-          body: mainBody(_),
+        return PopScope(
+          canPop: false,
+          child: Scaffold(
+            body: mainBody(_),
+          ),
         );
       }
     );
