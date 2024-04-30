@@ -313,7 +313,7 @@ class BaseNetwork {
             },
             isShowToast: isShowToast),
       );
-      dio.interceptors.add(LogInterceptor());
+      // dio.interceptors.add(LogInterceptor());
     }
     return dio;
   }

@@ -56,6 +56,13 @@ class LoginController extends GetxController {
     super.onInit();
   }
 
+  // @override
+  // void onInactive() {
+  //   Get.delete<LoginController>();
+  //   super.onInactive();
+  // }
+
+
   validateFields(){
     if(emailC.text.trim().isEmpty) {
       Utils.showErrToast('Please enter email address');

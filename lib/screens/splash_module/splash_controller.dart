@@ -2,6 +2,7 @@
 import 'dart:async';
 
 import 'package:untitled/constants/app.export.dart';
+import 'package:untitled/screens/create_account_module/create_account_model.dart';
 import 'package:untitled/screens/intro_module/intro_3_view.dart';
 import 'package:untitled/screens/language_select_module/language_select_view.dart';
 
@@ -19,12 +20,15 @@ class SplashController extends GetxController {
     print(isUserVerified);
     Timer(
       const Duration(seconds: 2),
-          () {
-        print("object");
+          () async{
+            // NewUserModel? verified = await Injector.getUserData();
+            //
+            // print(verified);
+            print("object");
         if(Injector.prefs?.getBool(PrefKeys.isFirstTime) == null) {
           Utils.transitionWithOff(const LanguageSelectView());
         } else {
-          if(token != null &&  isUserVerified == true) {
+          if(token != null &&  isUserVerified != null && isUserVerified == true) {
             Utils.transitionWithOff(const HomeView());
           } else {
             Utils.transitionWithOff(const Intro3View());

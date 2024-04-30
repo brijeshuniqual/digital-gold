@@ -112,9 +112,12 @@ class Injector {
   }
 
   static Future<NewUserModel> getUserData() async{
+    NewUserModel userData = NewUserModel();
     String? userdataString = prefs!.getString(PrefKeys.userData);
-    var json = jsonDecode(userdataString!);
-    NewUserModel userData = NewUserModel.fromJson(json);
+    if(userdataString != null) {
+      var json = jsonDecode(userdataString!);
+      NewUserModel userData = NewUserModel.fromJson(json);
+    }
     return userData;
   }
 

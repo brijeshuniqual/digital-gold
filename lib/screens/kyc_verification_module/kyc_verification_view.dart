@@ -26,7 +26,7 @@ class KYCVerificationView extends StatelessWidget {
               if (didPop) {
                 return;
               }
-              Utils.transitionWithTo(LoginView(
+              Utils.transitionWithOffAll(LoginView(
                 isFromIntro: false,
                 isFromCreate: true,
                 isFromKYC: true,
@@ -62,7 +62,7 @@ class KYCVerificationView extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         // _.goToBackScreen();
-                        Utils.transitionWithTo(LoginView(
+                        Utils.transitionWithOffAll(LoginView(
                           isFromIntro: false,
                           isFromCreate: true,
                           isFromKYC: true,

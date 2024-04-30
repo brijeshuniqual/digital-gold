@@ -79,7 +79,7 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<LoginController>(
         init: LoginController(isFromIntro: isFromIntro, isFromCreate: isFromCreate, isFromKYC: isFromKYC),
-        dispose: (_) => Get.delete<LoginController>(),
+        dispose: (_) => Get.delete<LoginController>().then((value) => print('login deleted')),
         builder: (_) {
           return PopScope(
             canPop: false,
@@ -137,7 +137,16 @@ class LoginView extends StatelessWidget {
                   children: [
                     InkWell(
                       onTap: () {
-                        _.goToBackView(context);
+                        // _.goToBackView(context);
+                        if(isFromKYC != null && isFromKYC == true) {
+                          Utils.transitionWithOffAll(const Intro3View());
+                        } else {
+                          if (Navigator.canPop(context)) {
+                            Utils.transitionWithClose(1);
+                          } else {
+                            SystemNavigator.pop();
+                          }
+                        }
                       },
                       child: Icon(
                         Icons.arrow_back_ios_new_rounded,
