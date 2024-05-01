@@ -107,116 +107,114 @@ class KYCVerificationView extends StatelessWidget {
         ),
         Expanded(
             child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.getSize, vertical: 20.getSize),
-            child: Column(
-              children: [
-                cardDetail(_, text: 'Aadhaar card details', hintText: 'Enter Aadhaar card number', controller: _.aadhaarNoC, isAadhaar: true),
-                12.heightSpacer,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(child: uploadImgCard(
-                      _,
-                      text: 'Front side  photo',
-                      onTap: () {
-                        _.uploadImg('Front Aadhar');
-                      },
-                      img: _.frontAadhaarImg,
-                      whichImg: 'Front Aadhar',
-                    ),),
-                    7.widthSpacer,
-                    Expanded(child: uploadImgCard(
-                      _,
-                      text: 'Back side photo',
-                      onTap: () {
-                        _.uploadImg('Back Aadhar');
-                      },
-                      img: _.backAadhaarImg,
-                      whichImg: 'Back Aadhar',
-                    ),),
-                  ],
-                ),
-                25.heightSpacer,
-                Row(
-                  children: [
-                    const Expanded(child: Divider()),
-                    14.widthSpacer,
-                    BasePangramText(
-                      text: 'OR',
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: ColorRes.blackColor,
-                    ),
-                    14.widthSpacer,
-                    const Expanded(child: Divider()),
-                  ],
-                ),
-                25.heightSpacer,
-                cardDetail(_, text: 'PAN card details', hintText: 'Enter PAN card number', controller: _.panNoC, isAadhaar: false),
-                12.heightSpacer,
-                Row(
-                  children: [
-                    Expanded(child: uploadImgCard(
-                      _,
-                      text: 'Pan card photo',
-                      onTap: () {
-                        _.uploadImg('Pan');
-                      },
-                      img: _.panImg,
-                      whichImg: 'Pan',
-                    ),),
-                    7.widthSpacer,
-                    const Expanded(
-                      child: SizedBox(),
-                    ),
-                  ],
-                ),
-                34.heightSpacer,
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.getSize),
-                  child: RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      text: 'By using this service, you agree to App name ',
-                      style: TextStyle(fontFamily: 'Pangram', fontSize: 12, fontWeight: FontWeight.w400, color: ColorRes.termsColor),
-                      children: [
-                        TextSpan(
-                          text: 'Terms of Service',
-                          style: TextStyle(color: ColorRes.blackColor),
-                        ),
-                        const TextSpan(
-                          text: ' and ',
-                        ),
-                        TextSpan(
-                          text: 'Privacy Policy',
-                          style: TextStyle(color: ColorRes.blackColor),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                16.heightSpacer,
-                Row(
-                  children: [
-                    Expanded(
-                      child: BaseRaisedButton(
-                        borderRadius: 20.getSize,
-                        buttonColor: ColorRes.yellowColor,
-                        buttonText: 'Continue',
-                        textColor: ColorRes.blackColor,
-                        onPressed: () {
-                          _.validateFields();
-                          // Utils.transitionWithTo(const KYCUnderView());
+              padding: EdgeInsets.symmetric(horizontal: 24.getSize, vertical: 20.getSize),
+              child: Column(
+                children: [
+                  cardDetail(_, text: 'Aadhaar card details', hintText: 'Enter Aadhaar card number', controller: _.aadhaarNoC, isAadhaar: true),
+                  12.heightSpacer,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      uploadImgCard(
+                        _,
+                        text: 'Front side  photo',
+                        onTap: () {
+                          _.uploadImg('Front Aadhar');
                         },
+                        img: _.frontAadhaarImg,
+                        whichImg: 'Front Aadhar',
+                      ),
+                      7.widthSpacer,
+                      uploadImgCard(
+                        _,
+                        text: 'Back side photo',
+                        onTap: () {
+                          _.uploadImg('Back Aadhar');
+                        },
+                        img: _.backAadhaarImg,
+                        whichImg: 'Back Aadhar',
+                      ),
+                    ],
+                  ),
+                  25.heightSpacer,
+                  Row(
+                    children: [
+                      const Expanded(child: Divider()),
+                      14.widthSpacer,
+                      BasePangramText(
+                        text: 'OR',
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: ColorRes.blackColor,
+                      ),
+                      14.widthSpacer,
+                      const Expanded(child: Divider()),
+                    ],
+                  ),
+                  25.heightSpacer,
+                  cardDetail(_, text: 'PAN card details', hintText: 'Enter PAN card number', controller: _.panNoC, isAadhaar: false),
+                  12.heightSpacer,
+                  Row(
+                    children: [
+                      uploadImgCard(
+                        _,
+                        text: 'Pan card photo',
+                        onTap: () {
+                          _.uploadImg('Pan');
+                        },
+                        img: _.panImg,
+                        whichImg: 'Pan',
+                      ),
+                      7.widthSpacer,
+                      const Expanded(
+                        child: SizedBox(),
+                      ),
+                    ],
+                  ),
+                  34.heightSpacer,
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 24.getSize),
+                    child: RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        text: 'By using this service, you agree to App name ',
+                        style: TextStyle(fontFamily: 'Pangram', fontSize: 12, fontWeight: FontWeight.w400, color: ColorRes.termsColor),
+                        children: [
+                          TextSpan(
+                            text: 'Terms of Service',
+                            style: TextStyle(color: ColorRes.blackColor),
+                          ),
+                          const TextSpan(
+                            text: ' and ',
+                          ),
+                          TextSpan(
+                            text: 'Privacy Policy',
+                            style: TextStyle(color: ColorRes.blackColor),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
-                10.heightSpacer,
-              ],
-            ),
-          ),
+                  ),
+                  16.heightSpacer,
+                  Row(
+                    children: [
+                      Expanded(
+                        child: BaseRaisedButton(
+                          borderRadius: 20.getSize,
+                          buttonColor: ColorRes.yellowColor,
+                          buttonText: 'Continue',
+                          textColor: ColorRes.blackColor,
+                          onPressed: () {
+                            _.validateFields();
+                            // Utils.transitionWithTo(const KYCUnderView());
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                  10.heightSpacer,
+                ],
+              ),
         ))
       ],
     );
